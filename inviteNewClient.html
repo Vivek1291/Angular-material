@@ -4,31 +4,9 @@
     <meta charset="UTF-8">
     <title>Invite New Client</title>
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
-    <style>
-       md-list-item md-divider[md-inset] {
-           border-top-width: 1px;
-            border-top-style: solid;
-            left: 20px;
-            width: 90%;
-           border-top-color: rgba(0,0,0, 1);
-        }
-        .md-icon-button, .card-media {
-            background-color: #80d8ff;
-        }
-        md-input-container .md-default-theme .md-placeholder {
-            color: #ffffff !important;
-        }
-       md-input-container .md-input {
-            border: none;
-           color: #ffffff !important;
-        }
-        md-input-container.md-altTheme-theme:not(.md-input-value).md-input-focused .md-input {
-            border:none;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style/amstyle.css">
 </head>
-<body ng-app="myApp">
+<body ng-app="MNEagle">
 <md-toolbar md-theme="altTheme" class="md-primary" layout-padding layput-wrap>
     <div class="md-toolbar-tools">
        <h2><span>Heading</span></h2>
@@ -96,71 +74,6 @@
 <script src="node_modules/angular-cookies/angular-cookies.js"></script>
 <script src="node_modules/angular-aria/angular-aria.js"></script>
 <script src="node_modules/angular-messages/angular-messages.js"></script>
-<script>
-var app = angular.module('myApp', ['ngMaterial'])
-app.controller('AppCtrl', function($scope) {
-
-    $scope.data = [
-        {
-            who: 'Min Li Chan',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            who: 'Min Li Chan',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            who: 'Min Li Chan',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            who: 'Min Li Chan',
-            notes: " I'll be in your neighborhood doing errands"
-        },
-        {
-            who: 'Min Li Chan',
-            when: '3:08PM',
-            notes: " I'll be in your neighborhood doing errands"
-        }
-    ];
-});
-       app.config(function ($mdThemingProvider) {
-     $mdThemingProvider.theme('altTheme')
-     });
-
-     app.config(function($mdThemingProvider) {
-     var bostonBlueMap =$mdThemingProvider.extendPalette('blue', {
-     '500':'40a3ad'
-     });
-     var matterHornMap = $mdThemingProvider.extendPalette('grey', {
-     'A200': '4e4e4e',
-     'contrastDefaultColor': 'light'
-     });
-     var purpleMixMap = $mdThemingProvider.extendPalette('purple', {
-     '500': 'a73c96'
-     });
-     var bgColorMixMap = $mdThemingProvider.extendPalette('blue-grey', {
-     'A200': 'f0f3e6'
-     });
-     $mdThemingProvider.definePalette('bostonBlue', bostonBlueMap);
-     $mdThemingProvider.theme('altTheme')
-     .primaryPalette('bostonBlue')
-
-
-     $mdThemingProvider.definePalette('matterHorn', matterHornMap);
-     $mdThemingProvider.theme('altTheme')
-     .accentPalette('matterHorn')
-
-     $mdThemingProvider.definePalette('purpleMix', purpleMixMap);
-     $mdThemingProvider.theme('altTheme')
-     .warnPalette('purpleMix')
-
-     $mdThemingProvider.definePalette('bgColorMix', bgColorMixMap);
-     $mdThemingProvider.theme('altTheme')
-     .backgroundPalette('bgColorMix', {
-     'default': 'A200'
-     })
-     });
-</script>
+<script src="scripts/amjs.js"></script>
 </body>
 </html>

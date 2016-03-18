@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <style>
+
+        [layout=column] >md-divider {
+            border-top-width: 2px;
+            border-top-style: solid;
+            border-top-color: rgba(0,0,0, 1);
+        }
+    </style>
+</head>
+<body ng-app="MNEagle">
+<md-content>
+<div layout="column"  layout-align="start center" layout-wrap>
+    <div>
+        <md-button class="md-raised">Manage Abilities</md-button>
+        <md-button class="md-raised md-primary md-color-100">Manage Tests</md-button>
+        <md-button class="md-raised md-accent">Manage Test Questions</md-button>
+    </div>
+</div>
+
+    <p>This is to check the background color</p>
+</md-content>
+<div md-theme="altTheme">
+    <md-button class="md-raised md-primary">Primary</md-button>
+    <md-button class="md-raised md-accent" >Accent</md-button>
+        <md-button class=" md-raised md-warn">Warn</md-button>
+    <md-content>
+        <div><p>This is first line of first content</p></div>
+        <div>This is second line of first content</div>
+    </md-content>
+</div>
+<md-toolbar class="md-theme-light" layout-margin layout-wrap>
+    <h2 class= "md-toolbar-tools">
+        Divider Color Check
+    </h2>
+</md-toolbar>
+<div layout="column" layout-wrap>
+    <md-content>
+        <div><p>This is first line of first content</p></div>
+        <div>This is second line of first content</div>
+    </md-content>
+    <md-divider></md-divider>
+    <md-content>
+        <div>This is first line of second content</div>
+        <div>This second line of second Content</div>
+    </md-content>
+    <md-divider></md-divider>
+</div>
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+-->
+
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-messages/angular-messages.js"></script>
+<script src="amjs.js"></script>
+</body>
+</html>

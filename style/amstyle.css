@@ -1,0 +1,20 @@
+md-list-item md-divider[md-inset] {
+    border-top-width: 1px;
+    border-top-style: solid;
+    left: 20px;
+    width: 90%;
+    border-top-color: rgba(0,0,0, 1);
+}
+.md-icon-button, .card-media {
+    background-color: #80d8ff;
+}
+md-input-container .md-default-theme .md-placeholder {
+    color: #ffffff !important;
+}
+md-input-container .md-input {
+    border: none;
+    color: #ffffff !important;
+}
+md-input-container.md-altTheme-theme:not(.md-input-value).md-input-focused .md-input {
+    border:none;
+}
