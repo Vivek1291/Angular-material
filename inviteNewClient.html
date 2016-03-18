@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invite New Client</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <style>
+       md-list-item md-divider[md-inset] {
+           border-top-width: 1px;
+            border-top-style: solid;
+            left: 20px;
+            width: 90%;
+           border-top-color: rgba(0,0,0, 1);
+        }
+        .md-icon-button, .card-media {
+            background-color: #80d8ff;
+        }
+        md-input-container .md-default-theme .md-placeholder {
+            color: #ffffff !important;
+        }
+       md-input-container .md-input {
+            border: none;
+           color: #ffffff !important;
+        }
+        md-input-container.md-altTheme-theme:not(.md-input-value).md-input-focused .md-input {
+            border:none;
+        }
+
+    </style>
+</head>
+<body ng-app="myApp">
+<md-toolbar md-theme="altTheme" class="md-primary" layout-padding layput-wrap>
+    <div class="md-toolbar-tools">
+       <h2><span>Heading</span></h2>
+        <span flex=""></span>
+        <span><p>Corinne Jacob</p></span>
+    </div>
+</md-toolbar>
+<div layout="row" flex>
+<div layout="row" layout-align="start center" flex="20">
+<md-card md-theme="altTheme">
+    <img  class="md-padding" ng-src="images/cats.jpg" class="md-card-image" alt="img" />
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">Card With Image</span>
+            <span class="md-subheading">Extra large</span>
+        </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout="row" layout-align="space-between">
+        <div class="md-media-xl card-media">Image Container</div>
+        <md-card-action layout="column" layout-align="space-between end">
+            <md-button class="md-icon-button" aria-label="Ur Choice">
+                <md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Ur Choice">
+                <md-icon md-svg-icon="md-toggle-arrow"></md-icon>
+            </md-button>
+            <md-button>Action</md-button>
+        </md-card-action>
+
+    </md-card-content>
+</md-card>
+</div>
+<div md-theme="altTheme" layout="row" layout-align="center center" ng-controller="AppCtrl" flex>
+    <div flex-gt-sm="33">
+        <md-card>
+            <md-toolbar layout="row" class="md-accent">
+                <div class="md-toolbar-tools">
+                    <ng-md-icon icon="search"></ng-md-icon>
+                    <md-input-container layout="row" layout-align="space-around start">
+                        <label></label>
+                            <md-icon md-svg-icon="images/search-icn.svg" flex="30" class="md-light md-48"></md-icon>
+                            <input type="text" placeholder="Search existing clients" />
+                    </md-input-container>
+                </div>
+            </md-toolbar>
+
+        <md-content>
+            <md-list-item class="md-2-line" ng-repeat="item in data">
+                <div class="md-list-item-text" layout="column" layout-padding>
+                    <h3>{{ item.who }}</h3>
+                    <p>{{ item.notes }}</p>
+                </div>
+                <md-divider md-inset="" ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-content>
+        </md-card>
+    </div>
+    </div>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-messages/angular-messages.js"></script>
+<script>
+var app = angular.module('myApp', ['ngMaterial'])
+app.controller('AppCtrl', function($scope) {
+
+    $scope.data = [
+        {
+            who: 'Min Li Chan',
+            notes: " I'll be in your neighborhood doing errands"
+        },
+        {
+            who: 'Min Li Chan',
+            notes: " I'll be in your neighborhood doing errands"
+        },
+        {
+            who: 'Min Li Chan',
+            notes: " I'll be in your neighborhood doing errands"
+        },
+        {
+            who: 'Min Li Chan',
+            notes: " I'll be in your neighborhood doing errands"
+        },
+        {
+            who: 'Min Li Chan',
+            when: '3:08PM',
+            notes: " I'll be in your neighborhood doing errands"
+        }
+    ];
+});
+       app.config(function ($mdThemingProvider) {
+     $mdThemingProvider.theme('altTheme')
+     });
+
+     app.config(function($mdThemingProvider) {
+     var bostonBlueMap =$mdThemingProvider.extendPalette('blue', {
+     '500':'40a3ad'
+     });
+     var matterHornMap = $mdThemingProvider.extendPalette('grey', {
+     'A200': '4e4e4e',
+     'contrastDefaultColor': 'light'
+     });
+     var purpleMixMap = $mdThemingProvider.extendPalette('purple', {
+     '500': 'a73c96'
+     });
+     var bgColorMixMap = $mdThemingProvider.extendPalette('blue-grey', {
+     'A200': 'f0f3e6'
+     });
+     $mdThemingProvider.definePalette('bostonBlue', bostonBlueMap);
+     $mdThemingProvider.theme('altTheme')
+     .primaryPalette('bostonBlue')
+
+
+     $mdThemingProvider.definePalette('matterHorn', matterHornMap);
+     $mdThemingProvider.theme('altTheme')
+     .accentPalette('matterHorn')
+
+     $mdThemingProvider.definePalette('purpleMix', purpleMixMap);
+     $mdThemingProvider.theme('altTheme')
+     .warnPalette('purpleMix')
+
+     $mdThemingProvider.definePalette('bgColorMix', bgColorMixMap);
+     $mdThemingProvider.theme('altTheme')
+     .backgroundPalette('bgColorMix', {
+     'default': 'A200'
+     })
+     });
+</script>
+</body>
+</html>

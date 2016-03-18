@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <style>
+        p {
+            width: 50%;
+        }
+    </style>
+</head>
+<body ng-app="myApp">
+    <md-toolbar layput-wrap>
+        <div class="md-toolbar-tools">
+            <h2><span>Heading</span></h2>
+            <span flex=""></span>
+            <span>Corinne Jacob</span>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-content>
+            <div layout="column" layout-align="center center">
+                <h4>About</h4>
+                <p flex="55">
+                    The layout-align directive takes two words. The first word says how the children will be aligned in the layout's direction, and the second word says how the children will be aligned perpendicular to the layout's direction.
+
+                    Only one value is required for this directive. For example, layout="row" layout-align="center" would make the elements center horizontally and use the default behavior vertically.
+
+                    layout="column" layout-align="center end" would make children align along the center vertically and along the end (right) horizontally.
+                </p>
+            </div>
+        </md-content>
+    </md-content>
+    <md-content md-theme="altTheme" layout-padding>
+    <div layout="row" layout-align="center center" ng-controller="AppCtrl">
+        <div layout="row" flex="55">
+            <md-card flex="45">
+                <md-toolbar layout="row" class="md-accent">
+                    <div class="md-toolbar-tools" layout="row" layout-align="center center" >
+                        <h3>Multiple Natures</h3>
+                    </div>
+                </md-toolbar>
+                <md-content  style="background-color: white;">
+                    <md-list-item class="md-2-line" ng-repeat="item in data">
+                        <div class="md-list-item-text" layout="column">
+                            <div layout="row" layout-align="space-between center">
+                            <h3>{{ item.who }}</h3>
+                            <code><span>{{name.value}}1</span> </code>
+                            </div>
+                            <md-slider-container >
+                                <md-slider class="md-warn" min="0" max="10" ng-model="name.value"  flex="90" min="0" max="255" aria-label="red" id="red-slider">
+                                    <span flex ng-model="color.red" aria-label="slider"></span>
+                                </md-slider>
+                            </md-slider-container>
+                        </div>
+                    </md-list-item>
+                </md-content>
+            </md-card>
+            <md-card flex="45" >
+                <md-toolbar class="md-accent">
+                    <div class="md-toolbar-tools" layout="row" layout-align="center center" >
+                        <h3>Multiple Natures</h3>
+                    </div>
+                </md-toolbar>
+                <md-content  style="background-color: white;">
+                    <md-list-item class="md-2-line" ng-repeat="item in data">
+                        <div class="md-list-item-text" layout="column">
+                           <div layout="row" layout-align="space-between center">
+                            <h3>{{ item.who }}</h3>
+                            <code><span>{{name.value}}1</span> </code>
+                           </div>
+                            <md-slider-container>
+                                <md-slider  class="md-warn" min="0" max="10" ng-model="name.value" flex="90" aria-label="slider"></md-slider>
+                            </md-slider-container>
+                        </div>
+                    </md-list-item>
+                </md-content>
+            </md-card>
+        </div>
+    </div>
+    </md-content>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-messages/angular-messages.js"></script>
+<script>
+    var app = angular.module('myApp', ['ngMaterial'])
+    app.controller('AppCtrl', function($scope) {
+
+        $scope.data = [
+            {
+                who: 'Min Li Chan',
+                notes: " I'll be in your neighborhood doing errands"
+            },
+            {
+                who: 'Min Li Chan',
+                notes: " I'll be in your neighborhood doing errands"
+            },
+            {
+                who: 'Min Li Chan',
+                notes: " I'll be in your neighborhood doing errands"
+            },
+            {
+                who: 'Min Li Chan',
+                notes: " I'll be in your neighborhood doing errands"
+            },
+            {
+                who: 'Min Li Chan',
+                when: '3:08PM',
+                notes: " I'll be in your neighborhood doing errands"
+            }
+        ];
+    });
+    app.config(function ($mdThemingProvider) {
+        $mdThemingProvider.theme('altTheme')
+    });
+
+    app.config(function($mdThemingProvider) {
+        var bostonBlueMap =$mdThemingProvider.extendPalette('blue', {
+            '500':'40a3ad'
+        });
+        var matterHornMap = $mdThemingProvider.extendPalette('grey', {
+            'A200': '4e4e4e',
+            'contrastDefaultColor': 'light'
+        });
+        var purpleMixMap = $mdThemingProvider.extendPalette('purple', {
+            '500': 'a73c96'
+        });
+        var bgColorMixMap = $mdThemingProvider.extendPalette('blue-grey', {
+            'A200': 'f0f3e6'
+        });
+        $mdThemingProvider.definePalette('bostonBlue', bostonBlueMap);
+        $mdThemingProvider.theme('altTheme')
+                .primaryPalette('bostonBlue')
+
+
+        $mdThemingProvider.definePalette('matterHorn', matterHornMap);
+        $mdThemingProvider.theme('altTheme')
+                .accentPalette('matterHorn')
+
+        $mdThemingProvider.definePalette('purpleMix', purpleMixMap);
+        $mdThemingProvider.theme('altTheme')
+                .warnPalette('purpleMix')
+
+        $mdThemingProvider.definePalette('bgColorMix', bgColorMixMap);
+        $mdThemingProvider.theme('altTheme')
+                .backgroundPalette('bgColorMix', {
+                    'default': 'A200'
+                })
+    });
+
+
+</script>
