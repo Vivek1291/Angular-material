@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
     <link rel="stylesheet" href="style/amstyle.css" />
     <style>
-        p {
+        p.centerpara{
             width: 50%;
         }
-        img{
+        img.circle{
             width: 300px;
             height: 300px;
             border-radius: 150px;
@@ -22,7 +22,7 @@
             width:1px;
             margin-left: 25px;
         }
-        md-card {
+        md-card.customCard {
             position: absolute;
             right: 10%;
         }
@@ -38,27 +38,27 @@
 </md-toolbar>
 <div layout="column" ng-controller="AppCtrl" md-theme="altTheme" class="md-background">
     <md-content>
-    <div layout="row" layout-align="center center" layout-margin layout-padding>
-        <div layout="column" layout-align="center center">
-             <img src="images/wallpaper.jpg" alt="clientImage"/>
-                <div  layout-margin style="margin-top: 20px;">
-                    <h2>Client name</h2>
-                </div>
+        <div layout="row" layout-align="center center" layout-margin layout-padding>
+            <div layout="column" layout-align="center center">
+                 <img class="circle" src="images/wallpaper.jpg" alt="clientImage"/>
+                    <div  layout-margin style="margin-top: 20px;">
+                        <h2>Client name</h2>
+                    </div>
+            </div>
+               <md-card class="customCard" style="background-color: #ffffff"  flex="30">
+                    <md-content style="background-color: #ffffff">
+                        <md-list-item class="md-1-line" ng-repeat="item in data">
+                            <div class="md-list-item-text" layout="column">
+                                <span>{{item.who}}</span>
+                            </div>
+                        </md-list-item>
+                    </md-content>
+                    <md-button class=" md-raised md-warn">Send Email</md-button>
+               </md-card>
         </div>
-           <md-card style="background-color: #ffffff"  flex="30">
-                <md-content style="background-color: #ffffff">
-                    <md-list-item class="md-1-line" ng-repeat="item in data">
-                        <div class="md-list-item-text" layout="column">
-                            <span>{{item.who}}</span>
-                        </div>
-                    </md-list-item>
-                </md-content>
-                <md-button class=" md-raised md-warn">Send Email</md-button>
-           </md-card>
-    </div>
     </md-content>
 </div>
-<div md-theme="altTheme" layout="row" layout-align="center center" class="md-background">
+<div md-theme="altTheme" layout="row" layout-align="center center" style="background-color: #f0f3e6;">
 <md-content layout="row" ng-controller="AppCtrl" layout-align="center center">
         <!--<div flex="45">-->
              <md-list-item class="md-1-line" ng-repeat="item in data" flex="45">
@@ -73,7 +73,7 @@
 <div layout="row" layout-align="center center">
     <md-content layout="column" layout-align="center center">
                 <h4>About</h4>
-                <p flex="55">
+                <p class="centerpara" flex="55">
                     The layout-align directive takes two words. The first word says how the children will be aligned in the layout's direction, and the second word says how the children will be aligned perpendicular to the layout's direction.
 
                     Only one value is required for this directive. For example, layout="row" layout-align="center" would make the elements center horizontally and use the default behavior vertically.
