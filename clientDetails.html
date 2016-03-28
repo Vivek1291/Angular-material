@@ -4,23 +4,74 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="style/amstyle.css" />
     <style>
         p {
             width: 50%;
         }
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 150px;
+            border: 10px solid #26C6DA;
+
+        }
+        .vertical-divider {
+            border-left: 2px solid #BDBDBD;
+            height: 50px;
+            width:1px;
+            margin-left: 25px;
+        }
+        md-card {
+            position: absolute;
+            right: 10%;
+        }
     </style>
 </head>
 <body ng-app="MNEagle">
-    <md-toolbar layput-wrap>
-        <div class="md-toolbar-tools">
-            <h2><span>Heading</span></h2>
-            <span flex=""></span>
-            <span>Corinne Jacob</span>
-        </div>
-    </md-toolbar>
+<md-toolbar layput-wrap>
+    <div class="md-toolbar-tools">
+        <h2><span>Heading</span></h2>
+        <span flex=""></span>
+        <span>Corinne Jacob</span>
+    </div>
+</md-toolbar>
+<div layout="column" ng-controller="AppCtrl" md-theme="altTheme" class="md-background">
     <md-content>
-        <md-content>
-            <div layout="column" layout-align="center center">
+    <div layout="row" layout-align="center center" layout-margin layout-padding>
+        <div layout="column" layout-align="center center">
+             <img src="images/wallpaper.jpg" alt="clientImage"/>
+                <div  layout-margin style="margin-top: 20px;">
+                    <h2>Client name</h2>
+                </div>
+        </div>
+           <md-card style="background-color: #ffffff"  flex="30">
+                <md-content style="background-color: #ffffff">
+                    <md-list-item class="md-1-line" ng-repeat="item in data">
+                        <div class="md-list-item-text" layout="column">
+                            <span>{{item.who}}</span>
+                        </div>
+                    </md-list-item>
+                </md-content>
+                <md-button class=" md-raised md-warn">Send Email</md-button>
+           </md-card>
+    </div>
+    </md-content>
+</div>
+<div md-theme="altTheme" layout="row" layout-align="center center" class="md-background">
+<md-content layout="row" ng-controller="AppCtrl" layout-align="center center">
+        <!--<div flex="45">-->
+             <md-list-item class="md-1-line" ng-repeat="item in data" flex="45">
+                <div class="md-list-item-text">
+                    <span>hello</span>
+                </div>
+                <div class="vertical-divider" ng-if="!$last"></div>
+            </md-list-item>
+        <!--</div>-->
+</md-content>
+</div>
+<div layout="row" layout-align="center center">
+    <md-content layout="column" layout-align="center center">
                 <h4>About</h4>
                 <p flex="55">
                     The layout-align directive takes two words. The first word says how the children will be aligned in the layout's direction, and the second word says how the children will be aligned perpendicular to the layout's direction.
@@ -29,9 +80,8 @@
 
                     layout="column" layout-align="center end" would make children align along the center vertically and along the end (right) horizontally.
                 </p>
-            </div>
-        </md-content>
     </md-content>
+</div>
     <md-content md-theme="altTheme" layout-padding>
     <div layout="row" layout-align="center center" ng-controller="AppCtrl">
         <div layout="row" flex="55">

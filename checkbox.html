@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CheckBox</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="style/amstyle.css" />
+</head>
+<body ng-app="MNEagle">
+    <div ng-controller="checkboxControl" class="md-padding" ng-cloak="">
+        <div>
+            <fieldset class="standard">
+                <legend>Using<ng-model></legend>
+                <div layout="column" layout-wrap="" layout-gt-sm="row">
+                    <div flex="50">
+                        <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+                            Checkbox 1: {{data.cb1}}
+                        </md-checkbox>
+                    </div>
+                    <div flex="50">
+                        <div layout-xs="column" flex-xs="100">
+                            <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'Yup'" ng-false-value="'Nope'" class="md-warn md-align-top-left" flex="">
+                                Checkbox 2: (md-warn) <br/>
+                                <span>
+                                    Click on this text.
+                                </span>
+                                <br/>
+                                {{data.cb2}}
+                            </md-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+    <script src="node_modules/angular-resource/angular-resource.js"></script>
+    <script src="node_modules/angular-cookies/angular-cookies.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-messages/angular-messages.js"></script>
+    <script src="scripts/amjs.js"></script>
+</body>
+</html>

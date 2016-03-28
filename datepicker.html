@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date Picker</title>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css">
+</head>
+<body ng-app="MNEagle">
+<div ng-controller="datePic" ng-cloak="" class="datepickerdemoBasicUsage">
+    <md-content>
+        <h4>Standard date-picker</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
+        <h4>Disabled date-picker</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date" disabled=""></md-datepicker>
+        <h4>Date-picker with min and max date</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+        <h4>Only weekends are selectable</h4>
+        <md-datepicker ng-model="myDate" md-placeholder="Enter date" md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+    </md-content>
+</div>
+<script src="node_modules/angular/angular.js"></script>
+<script src="node_modules/angular-animate/angular-animate.js"></script>
+<script src="node_modules/angular-material/angular-material.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+<script src="node_modules/angular-resource/angular-resource.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="node_modules/angular-aria/angular-aria.js"></script>
+<script src="node_modules/angular-messages/angular-messages.js"></script>
+<script src="scripts/amjs.js"></script>
+</body>
+</html>
