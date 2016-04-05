@@ -30,3 +30,76 @@ md-input-container.md-altTheme-theme:not(.md-input-value).md-input-focused .md-i
     margin-top: -10px;
     height: 24px;
     vertical-align: middle; }
+
+/*Client details page CSS*/
+p.centerpara{
+    width: 50%;
+}
+img.circle{
+    width: 250px;
+    height: 250px;
+    border-radius: 125px;
+    border: 10px solid #26C6DA;
+
+}
+.vertical-divider {
+    border-left: 2px solid #BDBDBD;
+    height: 50px;
+    width:1px;
+    margin-left: 25px;
+}
+md-card.customCard {
+    position: absolute;
+    right: 10%;
+}
+.short-map {
+    height: 250px;
+}
+
+/*Multiple nature client report css*/
+
+.reportStyle .user {
+    background-color: white;
+    transition: all 500ms;
+}
+
+
+
+.reportStyle .user.selected {
+    margin: 30px -15px;
+    border-radius: 2px;
+}/* Important*/
+.reportStyle .user.selected .expanded {
+    visibility: visible;
+}
+.reportStyle .user.selected .expanded,
+.reportStyle .user.selected .expanded > * {
+    max-height: 700px;
+    opacity: 1;
+}
+
+
+.reportStyle .user .expanded {
+    visibility: hidden;
+}
+.reportStyle .user .expanded,
+.reportStyle .user .expanded > * {
+    max-height: 0;
+    opacity: 0;
+    transition: all 500ms;
+}
+/*.item .user .expanded .split {
+    padding: 10px;
+}*/
+/*
+.item .user .face {
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    width: 48px;
+    height: 48px;
+    margin: 16px;
+}
+*/
+body {
+    background-color: #fefefe;
+}

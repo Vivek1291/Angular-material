@@ -1,9 +1,10 @@
 (function(){
     'use strict';
-    var app = angular.module('MNEagle', ['ngMaterial'])
+    var app = angular.module('MNEagle', ['ngMaterial', 'ngMaps'])
     /*Color Theme for all pages*/
     app.config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('altTheme')
+        $mdThemingProvider.setDefaultTheme('altTheme');
     });
 
     app.config(function($mdThemingProvider) {
@@ -40,6 +41,7 @@
             })
     });
 
+
   /*Data used for ng-repeat for several site*/
     app.controller('AppCtrl', function($scope) {
 
@@ -62,10 +64,13 @@
             },
             {
                 who: 'Min Li Chan',
-                when: '3:08PM',
                 notes: " I'll be in your neighborhood doing errands"
             }
         ];
+        $scope.selectedIndex =null;
+        $scope.overallStatus = function (index) {
+            $scope.selectedIndex = index;
+        }
     });
 
     /*Bottom Sheet Script*/
@@ -99,4 +104,55 @@
         self.fruitNames = ['Apple', 'Banana', 'Orange'];
         self.repeatFruitNames = angular.copy(self.fruitNames);
     }
+    /*MIMN client Details Script*/
+    app.controller('multipleReports', function($scope) {
+        $scope.data = [
+            {
+                head: 'Protective',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Educative',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Administrative',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Creative',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Healing',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Entertaining',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Providing',
+                content: " I'll be in your neighborhood doing errands"
+            },
+            {
+                head: 'Entrepreneurial',
+                content: " I'll be in your neighborhood doing errands"
+            }
+
+        ];
+        $scope.selectedIndex = null;
+        $scope.selectedItem = null;
+        $scope.selectedIndividualScores = null;
+        $scope.selectedUserIndex = undefined;
+        $scope.selectUserIndex = function (index) {
+            if ($scope.selectedUserIndex !== index) {
+                $scope.selectedUserIndex = index;
+            }
+            else {
+                $scope.selectedUserIndex = undefined;
+            }
+        };
+
+    })
 })();

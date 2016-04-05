@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MIMN client Report</title>
+    <link rel="stylesheet" href="../node_modules/angular-material/angular-material.css">
+    <link rel="stylesheet" href="../style/amstyle.css" />
+</head>
+<body ng-app="MNEagle">
+<md-content>
+<md-toolbar md-theme="altTheme" class="md-accent">
+    <div class="md-toolbar-tools" layout-align="space-between center">
+        <md-list><md-list-item>
+        <img src="../images/headerimage.jpeg" class="md-avatar"/>
+        </md-list-item></md-list>
+        <h2>My MI/MN Report</h2>
+        <span>Corinne Jacob<md-icon md-svg-icon="md-toggle-arrow"></md-icon></span>
+    </div>
+</md-toolbar>
+<div layout="row" layout-align="center center" md-theme="altTheme">
+    <h2 class="md-display-2">About Your Scores</h2>
+</div>
+<div layout="row" flex>
+     <div ng-controller="AppCtrl" layout-align="start center">
+         <div style="background-color: #a73c96">
+            <md-list-item class="md-1-line" ng-repeat="item in data" ng-style="{'background-color':$index==selectedIndex? '#4e4e4e':'', 'color': $index==selectedIndex? 'white':''}">
+                    <div class="md-list-item-text" layout="column"ng-click="overallStatus($index)">
+                        <h3 class="md-body-2">{{ item.who }}</h3>
+                    </div>
+            </md-list-item>
+        </div>
+    </div>
+    <div layout="row" layout-align="center center" ng-controller="multipleReports" flex>
+    <div flex-gt-sm="33">
+
+            <md-item ng-repeat="item in data" class="md-1-line reportStyle" ng-class="{ 'selected-item': $index == selectedUserIndex}">
+                <md-item-content class="user tile md-whiteframe-z1" ng-class="{ 'selected md-whiteframe-z4': $index == selectedUserIndex}" layout="column">
+                    <div layout="row" layout-fill ng-click="selectUserIndex($index)" class="folded">
+                        <div class="md-tile-content" layout="row" layout-align="space-between center">
+                            <h3 class="md-body-2">{{item.head}}</h3>
+                            <p ng-hide="$index == selectedUserIndex">
+                                <span class="md-body-2">{{$index}}</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div layout="column" layout-fill class="expanded">
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                        <h4 class="md-body-2">{{item.content}}</h4>
+                    </div>
+                    </md-item-content>
+                </md-item>
+<!--
+            <md-list-item class="md-1-line reportStyle" ng-repeat="item in data" ng-class="{ 'selected-item': $index == selectedIndividualScores}" ng-style="{'background-color':$index==selectedIndex? '#4e4e4e':'', 'color': $index==selectedIndex? 'white':''}">
+                    <div class="md-list-item-text user tile md-whiteframe-z1" ng-class="{ 'selected md-whiteframe-z2': $index == selectedIndividualScores}"layout="column">
+                        <md-item-content layout="column">
+                            <div layout="row" layout-fill ng-click="showIndividualScores(item, $index)">
+                                <div layout="column" layout-align="center start">
+                                    <h3 class="md-body-2">{{ item.head }}</h3>
+                                </div>
+                            </div>
+                            <div layout="column" layout-fill class="expanded">
+                                <h4>{{item.content}}</h4>
+                                <h4>{{item.content}}</h4>
+                                <h4>{{item.content}}</h4>
+                                <h4>{{item.content}}</h4>
+                                <h4>{{item.content}}</h4>
+                                <h4>{{item.content}}</h4>
+                            </div>
+                        </md-item-content>
+                    </div>
+                    <md-divider ng-if="!$last"></md-divider>
+                </md-list-item>
+-->
+    </div>
+    </div>
+</div>
+</md-content>
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/angular-animate/angular-animate.js"></script>
+<script src="../node_modules/angular-material/angular-material.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>-->
+<script src="../node_modules/angular-resource/angular-resource.js"></script>
+<script src="../node_modules/angular-cookies/angular-cookies.js"></script>
+<script src="../node_modules/angular-aria/angular-aria.js"></script>
+<script src="../node_modules/angular-messages/angular-messages.js"></script>
+<!--For angular map-->
+
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="../scripts/ng-maps.js"></script>
+<!---->
+<script src="../scripts/amjs.js"></script>
+</body>
+</html>
