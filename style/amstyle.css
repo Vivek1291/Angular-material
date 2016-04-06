@@ -57,14 +57,32 @@ md-card.customCard {
 }
 
 /*Multiple nature client report css*/
+.clickEffect {
+    background-color: black;
+    color: white;
+}
+.sideListHover:hover {
+    background-color: black;
+    color: white;
+    transition: all 1000ms;
+}
 
 .reportStyle .user {
     background-color: white;
     transition: all 500ms;
 }
-
-
-
+.reportStyle .user .hoverOnHead {
+    outline: none;
+}
+.lrPadding {
+    padding: 0 30px;
+}
+.reportStyle .user .hoverOnHead:not(.disableHover):hover{
+    background-color: black;
+    color: white;
+    transition: background-color 500ms;
+    outline: none;
+}
 .reportStyle .user.selected {
     margin: 30px -15px;
     border-radius: 2px;

@@ -67,10 +67,15 @@
                 notes: " I'll be in your neighborhood doing errands"
             }
         ];
-        $scope.selectedIndex =null;
+        $scope.selectedIndex =undefined;
         $scope.overallStatus = function (index) {
-            $scope.selectedIndex = index;
-        }
+            if ($scope.selectedIndex !== index) {
+                $scope.selectedIndex = index;
+            }
+            else {
+                $scope.selectedIndex = undefined;
+            }
+        };
     });
 
     /*Bottom Sheet Script*/

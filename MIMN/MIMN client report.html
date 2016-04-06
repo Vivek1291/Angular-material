@@ -21,29 +21,33 @@
     <h2 class="md-display-2">About Your Scores</h2>
 </div>
 <div layout="row" flex>
-     <div ng-controller="AppCtrl" layout-align="start center">
-         <div style="background-color: #a73c96">
-            <md-list-item class="md-1-line" ng-repeat="item in data" ng-style="{'background-color':$index==selectedIndex? '#4e4e4e':'', 'color': $index==selectedIndex? 'white':''}">
-                    <div class="md-list-item-text" layout="column"ng-click="overallStatus($index)">
-                        <h3 class="md-body-2">{{ item.who }}</h3>
+     <div ng-controller="AppCtrl" layout-align="start center" flex="15">
+         <div style="background-color: #a73c96" >
+            <md-item class="md-1-line sideListHover" layout="column" ng-repeat="item in data" ng-class="{'clickEffect':$index==selectedIndex}">
+                <md-item-content>
+                    <div class="md-list-item-text" ng-click="overallStatus($index)" style="outline: none;">
+                        <div flex style="padding: 0 15px;">
+                            <h3 class="md-body-2">{{ item.who }}</h3>
+                        </div>
                     </div>
-            </md-list-item>
+                </md-item-content>
+            </md-item>
         </div>
     </div>
-    <div layout="row" layout-align="center center" ng-controller="multipleReports" flex>
-    <div flex-gt-sm="33">
+    <div layout="row" layout-align="center center" ng-controller="multipleReports" flex layout-padding>
+    <div flex-gt-sm="33" class="md-padding">
 
             <md-item ng-repeat="item in data" class="md-1-line reportStyle" ng-class="{ 'selected-item': $index == selectedUserIndex}">
                 <md-item-content class="user tile md-whiteframe-z1" ng-class="{ 'selected md-whiteframe-z4': $index == selectedUserIndex}" layout="column">
-                    <div layout="row" layout-fill ng-click="selectUserIndex($index)" class="folded">
-                        <div class="md-tile-content" layout="row" layout-align="space-between center">
+                    <div layout="row" class=" hoverOnHead lrPadding" ng-class="{'disableHover': $index == selectedUserIndex}" ng-click="selectUserIndex($index)">
+                        <div class="md-tile-content" layout="row" flex layout-align="space-between center">
                             <h3 class="md-body-2">{{item.head}}</h3>
                             <p ng-hide="$index == selectedUserIndex">
                                 <span class="md-body-2">{{$index}}</span>
                             </p>
                         </div>
                     </div>
-                    <div layout="column" layout-fill class="expanded">
+                    <div layout="column" layout-fill class="expanded lrPadding">
                         <h4 class="md-body-2">{{item.content}}</h4>
                         <h4 class="md-body-2">{{item.content}}</h4>
                         <h4 class="md-body-2">{{item.content}}</h4>
