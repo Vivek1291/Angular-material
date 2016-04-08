@@ -95,8 +95,6 @@ md-card.customCard {
     max-height: 700px;
     opacity: 1;
 }
-
-
 .reportStyle .user .expanded {
     visibility: hidden;
 }
@@ -105,4 +103,30 @@ md-card.customCard {
     max-height: 0;
     opacity: 0;
     transition: all 500ms;
+}
+.fixedSideNav {
+    position: fixed;
+    left: 0;
+    background-color: #a73c96;
+    padding: 5px 0 0 20px;
+    width: 15%;
+    top: 30%;
+    z-index: 10;
+}
+.fixedSideNav .sideListHover .active {
+    background-color: black;
+    color: white;
+    transition: 1000ms;
+
+}
+.fixedSideNav .sideListHover a {
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    color: white;
+    padding: 0 42px;
+    overflow: hidden;
+}
+.fixedSideNav .sideListHover a:active {
+    color: white;
 }

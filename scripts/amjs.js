@@ -1,6 +1,6 @@
 (function(){
     'use strict';
-    var app = angular.module('MNEagle', ['ngMaterial', 'ngMaps'])
+    var app = angular.module('MNEagle', ['ngMaterial', 'ngMaps', 'ngScrollSpy'])
     /*Color Theme for all pages*/
     app.config(function ($mdThemingProvider) {
         $mdThemingProvider.theme('altTheme')
@@ -159,5 +159,10 @@
             }
         };
 
-    })
+    });
+    app.config(['scrollspyConfigProvider', function(ScrollspyConfigProvider) {
+        ScrollspyConfigProvider.config = {
+            offset: 10,
+        };
+    }]);
 })();
