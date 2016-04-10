@@ -18,14 +18,14 @@
             <span>Corinne Jacob<md-icon md-svg-icon="md-toggle-arrow"></md-icon></span>
         </div>
     </md-toolbar>
-    <div ng-controller="AppCtrl" layout="row" layout-align="center center" flex="35">
-        <div class="md-whiteframe-z3 fixedSideNav" >
+    <div ng-controller="AppCtrl" layout="row" layout-align="center center" flex layout-wrap="">
+        <div class="md-whiteframe-z3 fixedSideNav" flex="35">
             <div ng-repeat="item in data">
             <md-item class="md-1-line sideListHover" layout="column" layout-align="center center"  ng-class="{'clickEffect':$index==selectedIndex}">
                     <md-item-content  data-scrollspy-listen="section {{$index+1}}">
-                        <div class="md-list-item-text" layout="column" layout-align="center " ng-click="overallStatus($index)" style="outline: none;">
+                        <div class="md-list-item-text" layout="column" layout-align="center center" style="outline: none;" layout-wrap="">
                             <div >
-                                <h3 class="md-body-2"> <a href="#section {{$index+1}}">{{ item.who }}</a></h3>
+                                <h3 class="md-body-2"> <a href="#section {{$index+1}}" >{{ item.who }}</a></h3>
                             </div>
                         </div>
                     </md-item-content>

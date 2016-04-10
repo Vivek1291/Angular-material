@@ -67,6 +67,7 @@
                 notes: " I'll be in your neighborhood doing errands"
             }
         ];
+        /*ng-click="overallStatus($index)"  (html- body)*/
         $scope.selectedIndex =undefined;
         $scope.overallStatus = function (index) {
             if ($scope.selectedIndex !== index) {
